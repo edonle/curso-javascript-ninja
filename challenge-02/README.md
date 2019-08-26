@@ -41,7 +41,7 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-function(x, y, z) {
+function myfunction(x, y, z) {
   if(x !== null || x === undefinided) { return 'Preencha todos os valores corretamente!' }
   if(y !== null || y === undefinided) { return 'Preencha todos os valores corretamente!' }
   if(z !== null || z === undefinided) { return 'Preencha todos os valores corretamente!' }
@@ -49,7 +49,7 @@ function(x, y, z) {
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-function(2, 2);
+myfunction(2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 'Preencha todos os valores corretamente!'
@@ -69,16 +69,29 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function(x, y, z) {
+function myfunction(x, y, z) {
   var valor;
+  
+  if(x === null && y === null && z === null) {
+    valor = false;
+  } 
   
   if(x !== null && y !== null && z !== null) {
     valor = (x + y) / z;
-  } // Continuar aqui...
+  }
+  
+  if(x !== null && y !== null) {
+    valor = x + y;
+  } else {  
+    valor = x;
+  }
   
   return valor;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
+myfunction(); // Resultado: false
+myfunction(5,5,5); // Resultado: 2
+myfunction(3, 2); // Resultado: 5
+myfunction(4); // Resultado: 4
