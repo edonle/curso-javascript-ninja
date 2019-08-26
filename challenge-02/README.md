@@ -42,10 +42,11 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function myfunction(x, y, z) {
-  if(x !== null || x === undefinided) { return 'Preencha todos os valores corretamente!' }
-  if(y !== null || y === undefinided) { return 'Preencha todos os valores corretamente!' }
-  if(z !== null || z === undefinided) { return 'Preencha todos os valores corretamente!' }
-  return x * y * z;
+  if( x === undefinided || y === undefinided || z === undefinided ) { 
+    return 'Preencha todos os valores corretamente!';
+  } else {
+    return ( x * y * z ) + 2;
+  }
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -58,7 +59,7 @@ myfunction(2, 2);
 function(2, 2, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-8
+10
 
 /*
 Crie uma função com as seguintes características:
@@ -69,24 +70,19 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-function myfunction(x, y, z) {
-  var valor;
+function myfunction(x, y, z) { 
   
-  if(x === null && y === null && z === null) {
-    valor = false;
-  } 
-  
-  if(x !== null && y !== null && z !== null) {
-    valor = (x + y) / z;
+  if( x !== undefinided && y === undefinided && z === undefinided ) {
+    return x;
+  } else if( x !== undefinided && y !== undefinided && z === undefinided ) {
+    return x + y;
+  } else if( x !== undefinided && y !== undefinided && z !== undefinided ) {
+    return ( x + y ) / z;
+  } else if( x === undefinided && y === undefinided && z === undefinided ) {
+    return false;
+  } else {
+    return null;
   }
-  
-  if(x !== null && y !== null) {
-    valor = x + y;
-  } else {  
-    valor = x;
-  }
-  
-  return valor;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
