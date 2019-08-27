@@ -24,7 +24,7 @@ var pessoa = {
   altura: 1.69, 
   peso: 65, 
   andando: false,
-  caminhouQuantosMetros: 0;
+  caminhouQuantosMetros: 0
 }
 
 /*
@@ -166,13 +166,33 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function() { 
+  
   var artigo;
-  if (pessoa.sexo === "feminino") { artigo = "a"; } else { artigo = "o"; }
   var ano;
-  if (pessoa.idade === 1) { ano = "ano"; } else { ano = "anos"; }
-  return "Olá, eu sou " + artigo +  " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + ano + "," +    pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!"; 
-} // Terminar este...
+  var metro;
+  
+  if (pessoa.sexo === "feminino") { 
+    artigo = "a"; 
+  } else { 
+    artigo = "o"; 
+  }  
+  
+  if (pessoa.idade > 1) { 
+    ano = "anos"; 
+  } else { 
+    ano = "ano"; 
+  }
+  
+  if (pessoa.caminhouQuantosMetros > 1) { 
+    metro = "metros"; 
+  } else { 
+    metro = "metro"; 
+  }
+  
+  return "Olá, eu sou " + artigo +  " " + pessoa.nome + " " + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + ano + "," +    pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + metro + "!"; 
+}
 
 // Agora, apresente-se ;)
-?
+
+pessoa.apresentacao();
 ```
